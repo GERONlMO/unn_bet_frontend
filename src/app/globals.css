@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 18, 18, 18;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.theme-neon {
+  background-color: #0b0c10 !important;
+  background-image: 
+    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(34,197,94,0.15) 0%, transparent 40%),
+    radial-gradient(circle at calc(100% - var(--mouse-x, 50%)) calc(100% - var(--mouse-y, 50%)), rgba(59,130,246,0.1) 0%, transparent 40%) !important;
+}
+.theme-casino {
+  background-color: #2a0800 !important;
+  background-image: 
+    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,0,0,0.2) 0%, transparent 60%),
+    repeating-linear-gradient(45deg, rgba(0,0,0,0.2) 0px, rgba(0,0,0,0.2) 2px, transparent 2px, transparent 10px) !important;
+}
+
+@keyframes matrixFall {
+  0% { background-position: center, 0px 0px, 0px 0px; }
+  100% { background-position: center, 0px 1000px, 0px 1000px; }
+}
+
+.theme-matrix {
+  background-color: #001100 !important;
+  background-image: 
+    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0,255,0,0.15) 0%, transparent 50%),
+    linear-gradient(rgba(0,255,0,0.05) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(0,255,0,0.05) 1px, transparent 1px) !important;
+  background-size: 100% 100%, 20px 20px, 20px 20px !important;
+  animation: matrixFall 20s linear infinite;
+}
+.theme-ocean {
+  background-color: #000a1f !important;
+  background-image: 
+    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 20%), rgba(0,100,255,0.25) 0%, transparent 50%),
+    radial-gradient(circle at calc(var(--mouse-x, 50%) + 20%) calc(var(--mouse-y, 50%) + 20%), rgba(0,200,255,0.1) 0%, transparent 40%) !important;
+}
+.theme-lava {
+  background-color: #1a0500 !important;
+  background-image: 
+    radial-gradient(circle at var(--mouse-x, 50%) calc(var(--mouse-y, 50%) + 20%), rgba(255,100,0,0.2) 0%, transparent 50%),
+    radial-gradient(circle at calc(100% - var(--mouse-x, 50%)) 100%, rgba(255,0,0,0.15) 0%, transparent 60%) !important;
+}
